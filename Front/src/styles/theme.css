@@ -1,0 +1,183 @@
+/* Paleta de colores de marca para MangaStore */
+:root {
+  --brand-primary: #7b1fa2; /* púrpura */
+  --brand-secondary: #ff6f61; /* coral */
+  --brand-accent: #ffc107; /* ámbar */
+  --brand-bg: #f8f9fa; /* fondo claro */
+  --brand-surface: #ffffff; /* superficie */
+  --brand-text: #212529; /* texto */
+}
+
+/* Navbar con color de marca */
+.brand-navbar {
+  background-color: var(--brand-primary) !important;
+  /* Altura y padding consistentes en todas las páginas */
+  --bs-navbar-padding-y: 0.75rem;
+  --bs-navbar-padding-x: 1rem;
+  min-height: 64px;
+  overflow: visible;
+}
+.brand-navbar .navbar-brand,
+.brand-navbar .nav-link,
+.brand-navbar .navbar-toggler {
+  color: #fff !important;
+}
+.brand-navbar .nav-link {
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.25;
+}
+.brand-navbar .nav-link.active { color: var(--brand-accent) !important; }
+.brand-navbar .navbar-toggler {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+}
+
+/* Responsive: asegurar altura uniforme según breakpoint */
+@media (max-width: 991.98px) { /* < lg */
+  .brand-navbar {
+    min-height: 56px;
+    --bs-navbar-padding-y: 0.5rem;
+  }
+  .brand-navbar .navbar-brand {
+    font-size: 1rem;
+  }
+  .brand-navbar .nav-link {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (min-width: 992px) { /* >= lg */
+  .brand-navbar {
+    min-height: 64px;
+    --bs-navbar-padding-y: 0.75rem;
+  }
+  .brand-navbar .navbar-brand {
+    font-size: 1.25rem;
+  }
+}
+
+/* Botón de marca */
+.btn-brand {
+  background-color: var(--brand-secondary) !important;
+  color: #fff !important;
+  border-color: var(--brand-secondary) !important;
+}
+.btn-brand:hover,
+.btn-brand:focus {
+  background-color: #e85a50 !important;
+  color: #fff !important;
+  border-color: #e85a50 !important;
+}
+.btn-brand:disabled,
+.btn-brand.disabled {
+  background-color: var(--brand-secondary) !important;
+  color: #fff !important;
+  opacity: 0.65;
+}
+
+/* Precio destacado */
+.price {
+  color: var(--brand-secondary);
+}
+
+/* Badge de marca */
+.badge-brand {
+  background-color: var(--brand-accent);
+  color: var(--brand-text);
+}
+
+/* Footer con acento superior */
+.brand-footer { background-color: var(--brand-surface); border-top: 4px solid var(--brand-primary); }
+
+/* Overrides: convertir todos los btn-outline-* en sólidos */
+.btn-outline-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #fff;
+}
+.btn-outline-secondary {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+  color: #fff;
+}
+.btn-outline-success {
+  background-color: var(--bs-success);
+  border-color: var(--bs-success);
+  color: #fff;
+}
+.btn-outline-danger {
+  background-color: var(--bs-danger);
+  border-color: var(--bs-danger);
+  color: #fff;
+}
+.btn-outline-warning {
+  background-color: var(--bs-warning);
+  border-color: var(--bs-warning);
+  color: #000; /* contraste para amarillo */
+}
+.btn-outline-info {
+  background-color: var(--bs-info);
+  border-color: var(--bs-info);
+  color: #000; /* contraste para celeste */
+}
+.btn-outline-dark {
+  background-color: var(--bs-dark);
+  border-color: var(--bs-dark);
+  color: #fff;
+}
+.btn-outline-light {
+  background-color: var(--bs-light);
+  border-color: var(--bs-light);
+  color: #000;
+}
+
+/* Feedback visual al pasar el mouse en los nuevos sólidos */
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover,
+.btn-outline-success:hover,
+.btn-outline-danger:hover,
+.btn-outline-warning:hover,
+.btn-outline-info:hover,
+.btn-outline-dark:hover,
+.btn-outline-light:hover {
+  filter: brightness(0.93);
+}
+
+/* Fallback: botones .btn sin variante visible como sólidos de marca */
+.btn:not(.btn-primary):not(.btn-secondary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(.btn-info):not(.btn-light):not(.btn-dark):not(.btn-brand):not(.btn-outline-primary):not(.btn-outline-secondary):not(.btn-outline-success):not(.btn-outline-danger):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-light):not(.btn-outline-dark):not(.btn-link) {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #fff;
+}
+.btn:not(.btn-primary):not(.btn-secondary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(.btn-info):not(.btn-light):not(.btn-dark):not(.btn-brand):not(.btn-outline-primary):not(.btn-outline-secondary):not(.btn-outline-success):not(.btn-outline-danger):not(.btn-outline-warning):not(.btn-outline-info):not(.btn-outline-light):not(.btn-outline-dark):not(.btn-link):hover {
+  filter: brightness(0.93);
+}
+
+/* Hacer .btn-link sólido para mayor visibilidad */
+.btn-link {
+  background-color: var(--brand-secondary);
+  border: 1px solid var(--brand-secondary);
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+  border-radius: var(--bs-btn-border-radius);
+}
+.btn-link:hover {
+  background-color: #e85a50;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand-offcanvas {
+  background-color: var(--brand-primary) !important;
+  color: #fff !important;
+}
+.brand-offcanvas .nav-link { color: #fff !important; }
+.brand-offcanvas .dropdown-menu { background-color: var(--brand-surface) !important; }
+.brand-navbar .dropdown-menu {
+  position: absolute;
+  z-index: 1050;
+}

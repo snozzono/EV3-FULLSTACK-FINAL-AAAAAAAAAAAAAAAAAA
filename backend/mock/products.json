@@ -1,0 +1,15 @@
+[
+  {
+    "id": "p-1001",
+    "codigo": "MN-001",
+    "nombre": "Manga Ejemplo Vol. 1",
+    "descripcion": "Primer volumen de ejemplo.",
+    "precioNuevo": 5990,
+    "precioDescuento": null,
+    "stock": 25,
+    "stockCritico": 5,
+    "categoria": "Shonen",
+    "imagen": "https://via.placeholder.com/300x400?text=Manga",
+    "createdAt": "2025-01-01T10:00:00Z"
+  }
+]

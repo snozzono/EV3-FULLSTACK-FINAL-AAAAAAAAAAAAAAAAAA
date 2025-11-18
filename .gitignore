@@ -1,0 +1,29 @@
+# Node/Frontend
+Front/node_modules/
+Front/dist/
+Front/.env
+Front/.vite/
+Front/.DS_Store
+Front/Thumbs.db
+
+# Java/Maven Backend
+backend/tienda-api/target/
+backend/tienda-api/.idea/
+backend/tienda-api/.settings/
+backend/tienda-api/.classpath
+backend/tienda-api/.project
+backend/tienda-api/.env
+
+# OS/IDE
+.DS_Store
+Thumbs.db
+*.log
+
+# Documentos no esenciales
+*.md
+!README.md
+*.txt
+
+# Directorios legacy fuera de alcance
+vite-front/
+Tienda/

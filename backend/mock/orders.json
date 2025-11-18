@@ -1,0 +1,12 @@
+[
+  {
+    "id": "o-3001",
+    "usuarioId": "u-2",
+    "items": [
+      { "productoId": "p-1001", "nombre": "Manga Ejemplo Vol. 1", "precioUnitario": 5990, "qty": 2 }
+    ],
+    "total": 11980,
+    "estado": "CREADA",
+    "createdAt": "2025-01-03T08:30:00Z"
+  }
+]

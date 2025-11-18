@@ -1,0 +1,10 @@
+[
+  {
+    "id": "b-2001",
+    "titulo": "Novedades de la tienda",
+    "resumen": "Últimas novedades y ofertas destacadas.",
+    "contenido": "Detalle largo del blog de ejemplo.",
+    "imagen": "https://via.placeholder.com/800x400?text=Blog",
+    "createdAt": "2025-01-02T12:00:00Z"
+  }
+]

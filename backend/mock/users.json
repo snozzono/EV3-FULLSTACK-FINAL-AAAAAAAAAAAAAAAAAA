@@ -1,0 +1,18 @@
+[
+  {
+    "id": "u-1",
+    "nombre": "Admin",
+    "apellidos": "Sistema",
+    "email": "admin@duoc.cl",
+    "rol": "ADMIN",
+    "createdAt": "2025-01-01T09:00:00Z"
+  },
+  {
+    "id": "u-2",
+    "nombre": "Claudio",
+    "apellidos": "Cliente",
+    "email": "cliente@gmail.com",
+    "rol": "CLIENTE",
+    "createdAt": "2025-01-01T09:10:00Z"
+  }
+]

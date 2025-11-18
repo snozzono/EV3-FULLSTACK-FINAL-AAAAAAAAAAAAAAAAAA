@@ -1,0 +1,47 @@
+/* Reset y base para app desktop fija */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Evita el layout centrado del CSS por defecto de Vite */
+body {
+  display: block;
+}
+
+/* Contenedor fijo eliminado para restaurar flujo normal */
+
+/* Reglas globales de .container removidas para no interferir con Bootstrap */
+
+/* Estilo para ventanas/modales de tipo desktop */
+.window-component {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: auto;
+}
+
+.brand-navbar .nav-item.dropdown {
+  position: relative;
+}
+
+.brand-navbar .dropdown-menu,
+.brand-navbar .dropdown-menu[data-bs-popper="static"] {
+  position: absolute !important;
+  right: 0;
+  left: auto;
+  top: calc(100% + 0.25rem);
+  z-index: 1050;
+}
+
+.brand-navbar .dropdown-menu.show {
+  display: block;
+}
