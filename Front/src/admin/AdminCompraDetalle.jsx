@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
-export default function PerfilBoleta() {
+export default function AdminCompraDetalle() {
   const { id } = useParams()
   const navigate = useNavigate()
   const { user } = useAuth()
@@ -17,12 +17,12 @@ export default function PerfilBoleta() {
     const load = async () => {
       if (!user?.token) return
       try {
-        const resp = await fetch('http://localhost:8080/api/orders/mine', {
+        const resp = await fetch('http://localhost:8080/api/orders/admin', {
           headers: { Authorization: `Bearer ${user.token}` }
         })
         if (resp.ok) {
           const data = await resp.json()
-          const found = data.find(o => String(o.id) === String(id)) || null
+          const found = (data || []).find(o => String(o.id) === String(id)) || null
           setOrder(found)
         }
       } finally {
@@ -40,7 +40,7 @@ export default function PerfilBoleta() {
     return (
       <div>
         <h2>Boleta no encontrada</h2>
-        <Link className="btn btn-secondary mt-2" to="/cliente/perfil">Volver al perfil</Link>
+        <Link className="btn btn-secondary mt-2" to="/admin/compras">Volver al listado</Link>
       </div>
     )
   }
@@ -57,7 +57,7 @@ export default function PerfilBoleta() {
       <div className="d-flex align-items-center justify-content-between mb-3">
         <h2 className="mb-0">Boleta {order.numero}</h2>
         <div className="d-flex gap-2">
-          <Link className="btn btn-secondary" to="/cliente/perfil">Volver</Link>
+          <Link className="btn btn-secondary" to="/admin/compras">Volver</Link>
         </div>
       </div>
       <div className="row g-3">
@@ -65,6 +65,7 @@ export default function PerfilBoleta() {
           <div className="card">
             <div className="card-body">
               <div className="mb-2"><span className="text-muted">Fecha:</span> {new Date(order.fecha).toLocaleString()}</div>
+              <div className="mb-2"><span className="text-muted">Cliente:</span> {order.cliente?.nombre} ({order.cliente?.username})</div>
               <div className="d-flex justify-content-between"><span>Neto</span><span>{fmt(neto)}</span></div>
               <div className="d-flex justify-content-between"><span>IVA (19%)</span><span>{fmt(iva)}</span></div>
               <hr />

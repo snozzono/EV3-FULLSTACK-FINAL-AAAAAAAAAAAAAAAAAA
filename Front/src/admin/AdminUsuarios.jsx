@@ -62,18 +62,30 @@ export default function AdminUsuarios() {
         <table className="table table-striped">
           <thead>
             <tr>
+              <th>RUN</th>
               <th>Nombre</th>
+              <th>Apellidos</th>
               <th>Correo</th>
               <th>Rol</th>
+              <th>Fecha Nac.</th>
+              <th>Región</th>
+              <th>Comuna</th>
+              <th>Dirección</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             {!loading && list.map((u) => (
               <tr key={u.id}>
+                <td>{u.username}</td>
                 <td>{u.nombre}</td>
+                <td>{u.apellidos}</td>
                 <td>{u.email}</td>
                 <td>{u.role}</td>
+                <td>{u.fechaNacimiento}</td>
+                <td>{u.region}</td>
+                <td>{u.comuna}</td>
+                <td>{u.direccion}</td>
                 <td className="text-end">
                   <Link to={`/admin/usuarios/editar/${u.id}`} className="btn btn-sm btn-primary me-2">Editar</Link>
                   <button className="btn btn-sm btn-danger" onClick={() => onDelete(u.id)}>Eliminar</button>

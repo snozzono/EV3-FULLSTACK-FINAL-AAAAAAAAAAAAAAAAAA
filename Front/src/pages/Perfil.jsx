@@ -201,7 +201,10 @@ export default function Perfil() {
                   <td><strong>${Number(o.total || 0).toLocaleString()}</strong></td>
                   <td>{o.items?.length || 0}</td>
                   <td className="text-end">
-                    <button className="btn btn-sm btn-outline-primary" onClick={() => navigate(`/cliente/perfil/${o.id}`)}>Ver detalle</button>
+                    <button className="btn btn-sm btn-outline-primary" onClick={() => {
+                      const isAdmin = (user?.rol === 'ADMIN')
+                      navigate(isAdmin ? `/admin/compras/${o.id}` : `/cliente/perfil/${o.id}`)
+                    }}>Ver detalle</button>
                   </td>
                 </tr>
               ))}

@@ -27,6 +27,7 @@ import AdminBlogs from './admin/AdminBlogs'
 import AdminBlogForm from './admin/AdminBlogForm'
 import AdminContacto from './admin/AdminContacto'
 import AdminCompras from './admin/AdminCompras'
+import AdminCompraDetalle from './admin/AdminCompraDetalle'
 import ProtectedRoute, { ROLES } from './router/ProtectedRoute'
 import ClientLayout from './client/ClientLayout'
 
@@ -83,6 +84,7 @@ export default function App() {
               <Route path="blogs/editar/:id" element={<AdminBlogForm />} />
               <Route path="contacto" element={<AdminContacto />} />
               <Route path="compras" element={<AdminCompras />} />
+              <Route path="compras/:id" element={<AdminCompraDetalle />} />
               <Route path="perfil" element={<Perfil />} />
             </Route>
             {/* Rutas administrativas protegidas */}

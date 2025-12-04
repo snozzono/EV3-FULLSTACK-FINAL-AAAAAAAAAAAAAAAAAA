@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 export default function AdminCompras() {
   const { user } = useAuth()
   const [list, setList] = useState([])
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const load = async () => {
@@ -39,6 +41,7 @@ export default function AdminCompras() {
               <th>IVA</th>
               <th>Total</th>
               <th>Items</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -51,6 +54,9 @@ export default function AdminCompras() {
                 <td>${Number(o.iva || 0).toLocaleString()}</td>
                 <td><strong>${Number(o.total || 0).toLocaleString()}</strong></td>
                 <td>{o.items?.length || 0}</td>
+                <td className="text-end">
+                  <button className="btn btn-sm btn-outline-primary" onClick={() => navigate(`/admin/compras/${o.id}`)}>Ver detalle</button>
+                </td>
               </tr>
             ))}
           </tbody>
